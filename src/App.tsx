@@ -6,6 +6,7 @@ import { Header } from './components/Header';
 import { AddDepositModal } from './components/Modals/AddDepositModal';
 import { AddETFModal } from './components/Modals/AddETFModal';
 import { AddTransactionModal } from './components/Modals/AddTransactionModal';
+import { EditETFModal } from './components/Modals/EditETFModal';
 import { EditPriceModal } from './components/Modals/EditPriceModal';
 import { SummaryCards } from './components/SummaryCards';
 import { TransactionHistory } from './components/TransactionHistory';
@@ -17,6 +18,7 @@ export const AppContent: React.FC = () => {
   const [isTxModalOpen, setIsTxModalOpen] = useState(false);
   const [isEtfModalOpen, setIsEtfModalOpen] = useState(false);
   const [isPriceModalOpen, setIsPriceModalOpen] = useState(false);
+  const [etfToEdit, setEtfToEdit] = useState<ETFPerformance | null>(null);
   const [selectedEtfIdForTx, setSelectedEtfIdForTx] = useState<string | undefined>(undefined);
 
   const handleOpenTxModalForETF = (etfId: string) => {
@@ -33,6 +35,10 @@ export const AppContent: React.FC = () => {
     setIsPriceModalOpen(true);
   };
 
+  const handleEditETF = (etf: ETFPerformance) => {
+    setEtfToEdit(etf);
+  };
+
   return (
     <div className="app-container">
       <Header
@@ -46,7 +52,11 @@ export const AppContent: React.FC = () => {
         <SummaryCards />
 
         <div className="layout-section">
-          <ETFTable onSelectETFForBuy={handleOpenTxModalForETF} onEditETFPrice={handleEditPrice} />
+          <ETFTable
+            onSelectETFForBuy={handleOpenTxModalForETF}
+            onEditETFPrice={handleEditPrice}
+            onEditETF={handleEditETF}
+          />
         </div>
 
         <div className="layout-section">
@@ -77,6 +87,12 @@ export const AppContent: React.FC = () => {
       <AddETFModal isOpen={isEtfModalOpen} onClose={() => setIsEtfModalOpen(false)} />
 
       <EditPriceModal isOpen={isPriceModalOpen} onClose={() => setIsPriceModalOpen(false)} />
+
+      <EditETFModal
+        isOpen={etfToEdit !== null}
+        onClose={() => setEtfToEdit(null)}
+        etf={etfToEdit}
+      />
     </div>
   );
 };

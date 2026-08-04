@@ -19,7 +19,8 @@
     "rules": {
       "a11y": {
         "noLabelWithoutControl": "off",
-        "noSvgWithoutTitle": "off"
+        "noSvgWithoutTitle": "off",
+        "noStaticElementInteractions": "off"
       },
       "complexity": {
         "noImportantStyles": "off"

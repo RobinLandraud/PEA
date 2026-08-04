@@ -1,0 +1,821 @@
+{
+  "generatedAt": "2026-08-04T20:57:37+00:00",
+  "source": "https://www.justetf.com",
+  "etfs": {
+    "FR0007052782": {
+      "isin": "FR0007052782",
+      "name": "Amundi CAC 40 UCITS ETF Dist",
+      "index": "CAC 40®",
+      "replication": "Physique",
+      "ter": 0.25,
+      "fundSizeMEur": 3407.0,
+      "referenceDate": "27/05/2026",
+      "url": "https://www.justetf.com/fr/etf-profile.html?isin=FR0007052782",
+      "countries": [
+        {
+          "name": "France",
+          "percent": 82.4
+        },
+        {
+          "name": "Pays-Bas",
+          "percent": 7.0
+        },
+        {
+          "name": "Suisse",
+          "percent": 2.02
+        },
+        {
+          "name": "Luxembourg",
+          "percent": 1.76
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Industrie",
+          "percent": 29.63
+        },
+        {
+          "name": "Biens de consommation cycliques",
+          "percent": 16.29
+        },
+        {
+          "name": "Services financiers",
+          "percent": 13.62
+        },
+        {
+          "name": "Énergie",
+          "percent": 8.45
+        },
+        {
+          "name": "Santé",
+          "percent": 5.31
+        },
+        {
+          "name": "Biens de consommation non cycliques",
+          "percent": 4.39
+        },
+        {
+          "name": "Technologie",
+          "percent": 3.54
+        },
+        {
+          "name": "Télécommunication",
+          "percent": 2.81
+        },
+        {
+          "name": "Matières premières",
+          "percent": 2.13
+        },
+        {
+          "name": "Fournisseur",
+          "percent": 1.68
+        },
+        {
+          "name": "Immobilier",
+          "percent": 0.65
+        },
+        {
+          "name": "Autre",
+          "percent": 11.51
+        }
+      ],
+      "topHoldings": [
+        {
+          "name": "Schneider Electric SE",
+          "percent": 8.47
+        },
+        {
+          "name": "TotalEnergies SE",
+          "percent": 8.45
+        },
+        {
+          "name": "LVMH Moët Hennessy Louis Vuitton SE",
+          "percent": 6.6
+        },
+        {
+          "name": "Airbus SE",
+          "percent": 5.63
+        },
+        {
+          "name": "BNP Paribas SA",
+          "percent": 5.41
+        },
+        {
+          "name": "Safran SA",
+          "percent": 5.18
+        },
+        {
+          "name": "Sanofi",
+          "percent": 4.91
+        },
+        {
+          "name": "Air Liquide SA",
+          "percent": 4.68
+        },
+        {
+          "name": "L'Oréal SA",
+          "percent": 4.09
+        },
+        {
+          "name": "AXA SA",
+          "percent": 4.08
+        }
+      ]
+    },
+    "FR0011550185": {
+      "isin": "FR0011550185",
+      "name": "BNP Paribas Easy S&P 500 UCITS ETF EUR",
+      "index": "S&P 500®",
+      "replication": "Synthétique",
+      "ter": 0.14,
+      "fundSizeMEur": 3290.0,
+      "referenceDate": "29/05/2026",
+      "url": "https://www.justetf.com/fr/etf-profile.html?isin=FR0011550185",
+      "countries": [
+        {
+          "name": "États-Unis",
+          "percent": 94.88
+        },
+        {
+          "name": "Irlande",
+          "percent": 1.4
+        },
+        {
+          "name": "Autre",
+          "percent": 3.72
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Technologie",
+          "percent": 38.88
+        },
+        {
+          "name": "Télécommunication",
+          "percent": 10.32
+        },
+        {
+          "name": "Biens de consommation cycliques",
+          "percent": 9.79
+        },
+        {
+          "name": "Services financiers",
+          "percent": 9.29
+        },
+        {
+          "name": "Santé",
+          "percent": 8.17
+        },
+        {
+          "name": "Industrie",
+          "percent": 7.63
+        },
+        {
+          "name": "Biens de consommation non cycliques",
+          "percent": 4.3
+        },
+        {
+          "name": "Énergie",
+          "percent": 3.13
+        },
+        {
+          "name": "Fournisseur",
+          "percent": 2.1
+        },
+        {
+          "name": "Immobilier",
+          "percent": 1.78
+        },
+        {
+          "name": "Matières premières",
+          "percent": 1.41
+        },
+        {
+          "name": "Autre",
+          "percent": 3.2
+        }
+      ],
+      "topHoldings": [
+        {
+          "name": "NVIDIA Corp.",
+          "percent": 7.88
+        },
+        {
+          "name": "Apple",
+          "percent": 7.04
+        },
+        {
+          "name": "Microsoft",
+          "percent": 5.14
+        },
+        {
+          "name": "Amazon.com, Inc.",
+          "percent": 4.06
+        },
+        {
+          "name": "Alphabet, Inc. A",
+          "percent": 3.4
+        },
+        {
+          "name": "Broadcom Inc.",
+          "percent": 3.25
+        },
+        {
+          "name": "Alphabet, Inc. C",
+          "percent": 2.7
+        },
+        {
+          "name": "Meta Platforms",
+          "percent": 2.13
+        },
+        {
+          "name": "Tesla",
+          "percent": 1.88
+        },
+        {
+          "name": "Micron Technology",
+          "percent": 1.68
+        }
+      ],
+      "proxyIsin": "IE00B5BMR087",
+      "proxyName": "iShares Core S&P 500 UCITS ETF USD (Acc)",
+      "proxySource": "auto"
+    },
+    "FR0011871128": {
+      "isin": "FR0011871128",
+      "name": "Amundi PEA S&P 500 UCITS ETF Acc",
+      "index": "S&P 500®",
+      "replication": "Synthétique",
+      "ter": 0.12,
+      "fundSizeMEur": 1111.0,
+      "referenceDate": "29/05/2026",
+      "url": "https://www.justetf.com/fr/etf-profile.html?isin=FR0011871128",
+      "countries": [
+        {
+          "name": "États-Unis",
+          "percent": 94.88
+        },
+        {
+          "name": "Irlande",
+          "percent": 1.4
+        },
+        {
+          "name": "Autre",
+          "percent": 3.72
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Technologie",
+          "percent": 38.88
+        },
+        {
+          "name": "Télécommunication",
+          "percent": 10.32
+        },
+        {
+          "name": "Biens de consommation cycliques",
+          "percent": 9.79
+        },
+        {
+          "name": "Services financiers",
+          "percent": 9.29
+        },
+        {
+          "name": "Santé",
+          "percent": 8.17
+        },
+        {
+          "name": "Industrie",
+          "percent": 7.63
+        },
+        {
+          "name": "Biens de consommation non cycliques",
+          "percent": 4.3
+        },
+        {
+          "name": "Énergie",
+          "percent": 3.13
+        },
+        {
+          "name": "Fournisseur",
+          "percent": 2.1
+        },
+        {
+          "name": "Immobilier",
+          "percent": 1.78
+        },
+        {
+          "name": "Matières premières",
+          "percent": 1.41
+        },
+        {
+          "name": "Autre",
+          "percent": 3.2
+        }
+      ],
+      "topHoldings": [
+        {
+          "name": "NVIDIA Corp.",
+          "percent": 7.88
+        },
+        {
+          "name": "Apple",
+          "percent": 7.04
+        },
+        {
+          "name": "Microsoft",
+          "percent": 5.14
+        },
+        {
+          "name": "Amazon.com, Inc.",
+          "percent": 4.06
+        },
+        {
+          "name": "Alphabet, Inc. A",
+          "percent": 3.4
+        },
+        {
+          "name": "Broadcom Inc.",
+          "percent": 3.25
+        },
+        {
+          "name": "Alphabet, Inc. C",
+          "percent": 2.7
+        },
+        {
+          "name": "Meta Platforms",
+          "percent": 2.13
+        },
+        {
+          "name": "Tesla",
+          "percent": 1.88
+        },
+        {
+          "name": "Micron Technology",
+          "percent": 1.68
+        }
+      ],
+      "proxyIsin": "IE00B5BMR087",
+      "proxyName": "iShares Core S&P 500 UCITS ETF USD (Acc)",
+      "proxySource": "auto"
+    },
+    "FR0013412020": {
+      "isin": "FR0013412020",
+      "name": "Amundi PEA Emergent (MSCI Emerging) ESG Transition UCITS ETF Acc",
+      "index": "MSCI EM ex-Egypt ESG Broad CTB Select",
+      "replication": "Synthétique",
+      "ter": 0.3,
+      "fundSizeMEur": 844.0,
+      "referenceDate": "29/05/2026",
+      "url": "https://www.justetf.com/fr/etf-profile.html?isin=FR0013412020",
+      "countries": [
+        {
+          "name": "Taïwan",
+          "percent": 26.15
+        },
+        {
+          "name": "Corée du Sud",
+          "percent": 22.09
+        },
+        {
+          "name": "Chine",
+          "percent": 16.69
+        },
+        {
+          "name": "Inde",
+          "percent": 9.97
+        },
+        {
+          "name": "Brésil",
+          "percent": 3.43
+        },
+        {
+          "name": "Arabie saoudite",
+          "percent": 2.4
+        },
+        {
+          "name": "Afrique du Sud",
+          "percent": 2.37
+        },
+        {
+          "name": "Mexique",
+          "percent": 1.53
+        },
+        {
+          "name": "Malaisie",
+          "percent": 1.15
+        },
+        {
+          "name": "Pologne",
+          "percent": 1.04
+        },
+        {
+          "name": "Thaïlande",
+          "percent": 1.03
+        },
+        {
+          "name": "Autre",
+          "percent": 12.15
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Technologie",
+          "percent": 41.5
+        },
+        {
+          "name": "Services financiers",
+          "percent": 15.58
+        },
+        {
+          "name": "Biens de consommation cycliques",
+          "percent": 7.83
+        },
+        {
+          "name": "Industrie",
+          "percent": 6.64
+        },
+        {
+          "name": "Matières premières",
+          "percent": 5.88
+        },
+        {
+          "name": "Télécommunication",
+          "percent": 5.3
+        },
+        {
+          "name": "Énergie",
+          "percent": 3.11
+        },
+        {
+          "name": "Santé",
+          "percent": 2.64
+        },
+        {
+          "name": "Biens de consommation non cycliques",
+          "percent": 2.59
+        },
+        {
+          "name": "Fournisseur",
+          "percent": 1.73
+        },
+        {
+          "name": "Immobilier",
+          "percent": 1.48
+        },
+        {
+          "name": "Autre",
+          "percent": 5.73
+        }
+      ],
+      "topHoldings": [
+        {
+          "name": "Taiwan Semiconductor Manufacturing Co., Ltd.",
+          "percent": 12.89
+        },
+        {
+          "name": "Samsung Electronics Co., Ltd.",
+          "percent": 6.84
+        },
+        {
+          "name": "SK hynix, Inc.",
+          "percent": 5.95
+        },
+        {
+          "name": "Tencent Holdings Ltd.",
+          "percent": 2.34
+        },
+        {
+          "name": "Alibaba Group Holding Ltd.",
+          "percent": 1.8
+        },
+        {
+          "name": "MediaTek, Inc.",
+          "percent": 1.39
+        },
+        {
+          "name": "Delta Electronics, Inc.",
+          "percent": 1.07
+        },
+        {
+          "name": "Hon Hai Precision Industry Co., Ltd.",
+          "percent": 0.79
+        },
+        {
+          "name": "Samsung Electronics Co., Ltd.",
+          "percent": 0.75
+        },
+        {
+          "name": "China Construction Bank Corp.",
+          "percent": 0.65
+        }
+      ],
+      "proxyIsin": "IE00BKM4GZ66",
+      "proxyName": "iShares Core MSCI Emerging Markets IMI UCITS ETF (Acc)",
+      "proxySource": "manual"
+    },
+    "FR001400U5Q4": {
+      "isin": "FR001400U5Q4",
+      "name": "Amundi PEA Monde (MSCI World) UCITS ETF Acc",
+      "index": "MSCI World",
+      "replication": "Synthétique",
+      "ter": 0.2,
+      "fundSizeMEur": 1267.0,
+      "referenceDate": "26/05/2026",
+      "url": "https://www.justetf.com/fr/etf-profile.html?isin=FR001400U5Q4",
+      "countries": [
+        {
+          "name": "États-Unis",
+          "percent": 68.39
+        },
+        {
+          "name": "Japon",
+          "percent": 5.61
+        },
+        {
+          "name": "Grande-Bretagne",
+          "percent": 3.13
+        },
+        {
+          "name": "Canada",
+          "percent": 3.0
+        },
+        {
+          "name": "Allemagne",
+          "percent": 2.19
+        },
+        {
+          "name": "France",
+          "percent": 2.16
+        },
+        {
+          "name": "Suisse",
+          "percent": 2.15
+        },
+        {
+          "name": "Pays-Bas",
+          "percent": 1.59
+        },
+        {
+          "name": "Australie",
+          "percent": 1.57
+        },
+        {
+          "name": "Irlande",
+          "percent": 1.19
+        },
+        {
+          "name": "Autre",
+          "percent": 9.02
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Technologie",
+          "percent": 30.42
+        },
+        {
+          "name": "Services financiers",
+          "percent": 13.67
+        },
+        {
+          "name": "Industrie",
+          "percent": 10.34
+        },
+        {
+          "name": "Biens de consommation cycliques",
+          "percent": 9.16
+        },
+        {
+          "name": "Télécommunication",
+          "percent": 8.81
+        },
+        {
+          "name": "Santé",
+          "percent": 7.73
+        },
+        {
+          "name": "Biens de consommation non cycliques",
+          "percent": 4.7
+        },
+        {
+          "name": "Énergie",
+          "percent": 3.91
+        },
+        {
+          "name": "Matières premières",
+          "percent": 2.85
+        },
+        {
+          "name": "Fournisseur",
+          "percent": 2.56
+        },
+        {
+          "name": "Immobilier",
+          "percent": 1.74
+        },
+        {
+          "name": "Autre",
+          "percent": 4.11
+        }
+      ],
+      "topHoldings": [
+        {
+          "name": "NVIDIA Corp.",
+          "percent": 5.78
+        },
+        {
+          "name": "Apple",
+          "percent": 5.02
+        },
+        {
+          "name": "Microsoft",
+          "percent": 3.25
+        },
+        {
+          "name": "Amazon.com, Inc.",
+          "percent": 2.83
+        },
+        {
+          "name": "Alphabet, Inc. A",
+          "percent": 2.51
+        },
+        {
+          "name": "Broadcom Inc.",
+          "percent": 2.11
+        },
+        {
+          "name": "Alphabet, Inc. C",
+          "percent": 2.07
+        },
+        {
+          "name": "Meta Platforms",
+          "percent": 1.48
+        },
+        {
+          "name": "Tesla",
+          "percent": 1.36
+        },
+        {
+          "name": "Micron Technology",
+          "percent": 1.12
+        }
+      ],
+      "proxyIsin": "IE000BI8OT95",
+      "proxyName": "Amundi Core MSCI World UCITS ETF Acc",
+      "proxySource": "auto"
+    },
+    "LU1681043599": {
+      "isin": "LU1681043599",
+      "name": "Amundi MSCI World Swap UCITS ETF EUR Acc",
+      "index": "MSCI World",
+      "replication": "Synthétique",
+      "ter": 0.38,
+      "fundSizeMEur": 6386.0,
+      "referenceDate": "26/05/2026",
+      "url": "https://www.justetf.com/fr/etf-profile.html?isin=LU1681043599",
+      "countries": [
+        {
+          "name": "États-Unis",
+          "percent": 68.39
+        },
+        {
+          "name": "Japon",
+          "percent": 5.61
+        },
+        {
+          "name": "Grande-Bretagne",
+          "percent": 3.13
+        },
+        {
+          "name": "Canada",
+          "percent": 3.0
+        },
+        {
+          "name": "Allemagne",
+          "percent": 2.19
+        },
+        {
+          "name": "France",
+          "percent": 2.16
+        },
+        {
+          "name": "Suisse",
+          "percent": 2.15
+        },
+        {
+          "name": "Pays-Bas",
+          "percent": 1.59
+        },
+        {
+          "name": "Australie",
+          "percent": 1.57
+        },
+        {
+          "name": "Irlande",
+          "percent": 1.19
+        },
+        {
+          "name": "Autre",
+          "percent": 9.02
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Technologie",
+          "percent": 30.42
+        },
+        {
+          "name": "Services financiers",
+          "percent": 13.67
+        },
+        {
+          "name": "Industrie",
+          "percent": 10.34
+        },
+        {
+          "name": "Biens de consommation cycliques",
+          "percent": 9.16
+        },
+        {
+          "name": "Télécommunication",
+          "percent": 8.81
+        },
+        {
+          "name": "Santé",
+          "percent": 7.73
+        },
+        {
+          "name": "Biens de consommation non cycliques",
+          "percent": 4.7
+        },
+        {
+          "name": "Énergie",
+          "percent": 3.91
+        },
+        {
+          "name": "Matières premières",
+          "percent": 2.85
+        },
+        {
+          "name": "Fournisseur",
+          "percent": 2.56
+        },
+        {
+          "name": "Immobilier",
+          "percent": 1.74
+        },
+        {
+          "name": "Autre",
+          "percent": 4.11
+        }
+      ],
+      "topHoldings": [
+        {
+          "name": "NVIDIA Corp.",
+          "percent": 5.78
+        },
+        {
+          "name": "Apple",
+          "percent": 5.02
+        },
+        {
+          "name": "Microsoft",
+          "percent": 3.25
+        },
+        {
+          "name": "Amazon.com, Inc.",
+          "percent": 2.83
+        },
+        {
+          "name": "Alphabet, Inc. A",
+          "percent": 2.51
+        },
+        {
+          "name": "Broadcom Inc.",
+          "percent": 2.11
+        },
+        {
+          "name": "Alphabet, Inc. C",
+          "percent": 2.07
+        },
+        {
+          "name": "Meta Platforms",
+          "percent": 1.48
+        },
+        {
+          "name": "Tesla",
+          "percent": 1.36
+        },
+        {
+          "name": "Micron Technology",
+          "percent": 1.12
+        }
+      ],
+      "proxyIsin": "IE000BI8OT95",
+      "proxyName": "Amundi Core MSCI World UCITS ETF Acc",
+      "proxySource": "auto"
+    }
+  }
+}

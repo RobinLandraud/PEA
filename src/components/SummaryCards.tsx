@@ -89,17 +89,18 @@ export const SummaryCards: React.FC = () => {
         </div>
         <div className={`card-value ${isPositiveGain ? 'text-emerald' : 'text-danger'}`}>
           {formatCurrency(summary.totalGainLoss)}
-        </div>
-        <div
-          className={`${isPositiveGain ? 'text-emerald' : 'text-danger'}`}
-        >
-          <span
-            className={`gain-loss-badge ${isPositiveGain ? 'badge-emerald-sm' : 'badge-danger-sm'}`}
+          <div
+            className={`${isPositiveGain ? 'text-emerald' : 'text-danger'}`}
           >
-            {isPositiveGain ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
-            {formatPercent(summary.totalGainLossPercent)}
-          </span>
+            <span
+              className={`gain-loss-badge ${isPositiveGain ? 'badge-emerald-sm' : 'badge-danger-sm'}`}
+            >
+              {isPositiveGain ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
+              {formatPercent(summary.totalGainLossPercent)}
+            </span>
+          </div>
         </div>
+        <div className="card-subtitle text-muted">Hors impôt sur le revenu</div>
       </div>
 
       {/* 7. Fiscalité Estimée en sortie*/}
@@ -110,8 +111,20 @@ export const SummaryCards: React.FC = () => {
             {isPositiveGain ? <TrendingUp size={20} /> : <TrendingDown size={20} />}
           </div>
         </div>
-        <div className={`card-value ${isPositiveGain ? 'text-emerald' : 'text-danger'}`}>{formatCurrency(summary.totalGainLoss > 0 ? summary.totalGainLoss - summary.totalGainLoss * 0.17 : 0)}</div>
-        <div className="card-subtitle text-muted">Hors impôt sur le revenu (apres 5 ans)</div>
+        <div className={`card-value ${isPositiveGain ? 'text-emerald' : 'text-danger'}`}>
+          {formatCurrency(summary.totalGainLoss > 0 ? summary.totalGainLoss - summary.totalGainLoss * 0.186 : 0)}
+          <div
+            className={`${isPositiveGain ? 'text-emerald' : 'text-danger'}`}
+          >
+            <span
+              className={`gain-loss-badge ${isPositiveGain ? 'badge-emerald-sm' : 'badge-danger-sm'}`}
+            >
+              {isPositiveGain ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
+              {formatPercent(summary.totalGainLossPercent > 0 ? summary.totalGainLossPercent - summary.totalGainLossPercent * 0.186 : 0)}
+            </span>
+          </div>
+        </div>
+        <div className="card-subtitle text-muted">~18.6% (PS), Hors impôt sur le revenu</div>
       </div>
     </div>
   );

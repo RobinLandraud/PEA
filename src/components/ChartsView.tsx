@@ -1,21 +1,71 @@
 import type React from 'react';
+import { useState } from 'react';
 import { usePEA } from '../context/PEAContext';
+import type { ETFExposure, ExposureKind } from '../types/pea';
+import { getEtfSlices, getExposure } from '../utils/exposure';
 import { formatCurrency, formatPercent } from '../utils/formatters';
+import { ExposureBreakdown } from './ExposureBreakdown';
+
+interface AllocationItem {
+  id: string;
+  name: string;
+  fullName: string;
+  value: number;
+  percent: number;
+  color: string;
+  exposure?: ETFExposure;
+}
+
+interface TooltipState {
+  item: AllocationItem;
+  x: number;
+  y: number;
+}
+
+const TOP_SLICES = 4;
+
+const ExposureColumn: React.FC<{ exposure: ETFExposure; kind: ExposureKind; title: string }> = ({
+  exposure,
+  kind,
+  title,
+}) => {
+  const slices = getEtfSlices(exposure, kind).slice(0, TOP_SLICES);
+
+  return (
+    <div className="tooltip-column">
+      <span className="tooltip-column-title">{title}</span>
+      {slices.length === 0 ? (
+        <span className="tooltip-row text-muted">—</span>
+      ) : (
+        slices.map((slice) => (
+          <span key={slice.name} className="tooltip-row">
+            <span className="tooltip-row-name">{slice.name}</span>
+            <span className="tooltip-row-value">{slice.percent.toFixed(1)} %</span>
+          </span>
+        ))
+      )}
+    </div>
+  );
+};
 
 export const ChartsView: React.FC = () => {
-  const { etfPerformances, summary } = usePEA();
+  const { etfPerformances, summary, countryExposure, sectorExposure } = usePEA();
+  const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
   const totalWealth = summary.totalWealth;
 
-  const allocationItems = [
+  const allocationItems: AllocationItem[] = [
     ...etfPerformances.map((etf) => ({
+      id: etf.id,
       name: etf.ticker,
       fullName: etf.name,
       value: etf.currentValuation,
       percent: totalWealth > 0 ? (etf.currentValuation / totalWealth) * 100 : 0,
       color: etf.color,
+      exposure: getExposure(etf.isin),
     })),
     {
+      id: 'cash',
       name: 'Reste (Espèces)',
       fullName: "Solde d'espèces disponible",
       value: Math.max(summary.cashRemaining, 0),
@@ -23,6 +73,10 @@ export const ChartsView: React.FC = () => {
       color: '#10b981',
     },
   ].filter((item) => item.value > 0);
+
+  const showTooltip = (item: AllocationItem, event: { clientX: number; clientY: number }) => {
+    setTooltip({ item, x: event.clientX, y: event.clientY });
+  };
 
   let cumulativePercent = 0;
 
@@ -47,16 +101,19 @@ export const ChartsView: React.FC = () => {
               const largeArcFlag = item.percent > 50 ? 1 : 0;
               const pathData = `M 50 50 L ${x1} ${y1} A 40 40 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
 
+              const isDimmed = tooltip !== null && tooltip.item.id !== item.id;
+
               return (
                 <path
-                  key={item.name}
+                  key={item.id}
                   d={pathData}
                   fill={item.color}
-                  opacity={0.9}
+                  opacity={isDimmed ? 0.35 : 0.9}
                   className="donut-segment"
-                >
-                  <title>{`${item.fullName}: ${formatCurrency(item.value)} (${item.percent.toFixed(1)}%)`}</title>
-                </path>
+                  onMouseEnter={(event) => showTooltip(item, event)}
+                  onMouseMove={(event) => showTooltip(item, event)}
+                  onMouseLeave={() => setTooltip(null)}
+                />
               );
             })}
             <circle cx="50" cy="50" r="26" fill="var(--bg-card)" />
@@ -70,14 +127,76 @@ export const ChartsView: React.FC = () => {
 
         <div className="donut-legend mt-4">
           {allocationItems.map((item) => (
-            <div key={item.name} className="legend-item">
+            <button
+              type="button"
+              key={item.id}
+              className="legend-item legend-item-interactive"
+              onMouseEnter={(event) => showTooltip(item, event)}
+              onMouseMove={(event) => showTooltip(item, event)}
+              onMouseLeave={() => setTooltip(null)}
+              onFocus={(event) => {
+                const rect = event.currentTarget.getBoundingClientRect();
+                showTooltip(item, { clientX: rect.left + rect.width / 2, clientY: rect.top });
+              }}
+              onBlur={() => setTooltip(null)}
+            >
               <div className="legend-dot" style={{ backgroundColor: item.color }} />
               <span className="legend-name">{item.name}</span>
               <span className="legend-value">{item.percent.toFixed(1)} %</span>
-            </div>
+            </button>
           ))}
         </div>
+
+        {tooltip && (
+          <div
+            className="donut-tooltip"
+            style={{
+              left: Math.min(Math.max(tooltip.x, 170), window.innerWidth - 170),
+              top: tooltip.y - 16,
+            }}
+          >
+            <span className="tooltip-title">{tooltip.item.fullName}</span>
+            <span className="tooltip-subtitle">
+              {formatCurrency(tooltip.item.value)} — {tooltip.item.percent.toFixed(1)} % du
+              patrimoine
+            </span>
+
+            {tooltip.item.exposure ? (
+              <>
+                <div className="tooltip-columns">
+                  <ExposureColumn exposure={tooltip.item.exposure} kind="countries" title="Pays" />
+                  <ExposureColumn
+                    exposure={tooltip.item.exposure}
+                    kind="sectors"
+                    title="Secteurs"
+                  />
+                </div>
+                {tooltip.item.exposure.proxyIsin && (
+                  <span className="tooltip-footnote">
+                    Exposition estimée via {tooltip.item.exposure.proxyName}
+                  </span>
+                )}
+              </>
+            ) : (
+              tooltip.item.id !== 'cash' && (
+                <span className="tooltip-footnote">Exposition inconnue (ETF non scrapé)</span>
+              )
+            )}
+          </div>
+        )}
       </div>
+
+      <ExposureBreakdown
+        title="Exposition par pays"
+        exposure={countryExposure}
+        emptyLabel="Aucune donnée d'exposition : lancer le scrapper justETF pour vos ETF."
+      />
+
+      <ExposureBreakdown
+        title="Exposition par secteur"
+        exposure={sectorExposure}
+        emptyLabel="Aucune donnée d'exposition : lancer le scrapper justETF pour vos ETF."
+      />
 
       <div className="card chart-card">
         <h3 className="card-title-sm mb-4">Bilan Capital Investi vs Valorisation</h3>

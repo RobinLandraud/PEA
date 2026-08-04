@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"//wsl.localhost/Ubuntu-24.04/home/robin/Documents/Projects/PEA\" && grep -n \"donut\\\\|chart-card\\\\|charts-grid\\\\|legend\\\\|tooltip\" src/index.css | head -60)",
+      "Read(///wsl.localhost/Ubuntu-24.04/home/robin/Documents/Projects/**)",
+      "Bash(cd \"//wsl.localhost/Ubuntu-24.04/home/robin/Documents/Projects/PEA\" && sed -n '600,700p' src/index.css)",
+      "PowerShell(wsl -e bash -lc 'python3 --version; python3 -c \"import justetf_scraping; print\\(999\\)\" 2>&1 | tail -1; pip3 --version 2>&1 | tail -1')",
+      "Bash(wsl.exe -e python3 -c \"import justetf_scraping, sys; print\\('OK', sys.version\\)\")",
+      "Bash(wsl.exe -e python3 --version)",
+      "Bash(wsl.exe -e bash -c \"ls /home/robin/Documents/Projects/PEA/src/scrappers\")",
+      "Bash(wsl.exe -e bash -c \"cd /home/robin/Documents/Projects/PEA && python3 -m venv .venv 2>&1 | tail -3 && .venv/bin/pip install --quiet justetf-scraping 2>&1 | tail -5; .venv/bin/python -c 'import justetf_scraping as j; print\\(\\\\\"OK\\\\\", [x for x in dir\\(j\\) if not x.startswith\\(chr\\(95\\)\\)]\\)'\")",
+      "Bash(wsl.exe -e bash -c \"cd /home/robin/Documents/Projects/PEA && timeout 60 .venv/bin/pip install justetf-scraping 2>&1 | tail -12\")",
+      "Bash(wsl.exe -e bash -c \"timeout 30 curl -sS -o /dev/null -w '%{http_code}\\\\n' https://pypi.org/simple/ 2>&1; timeout 30 curl -sS -o /dev/null -w '%{http_code}\\\\n' https://www.justetf.com 2>&1\")",
+      "Bash(wsl.exe -e bash -c \"timeout 60 curl -sS -o /tmp/pea_profile.html -w '%{http_code} %{size_download}\\\\n' -H 'User-Agent: Mozilla/5.0' 'https://www.justetf.com/fr/etf-profile.html?isin=IE00B4L5Y983'; grep -o -i 'Pays\\\\|Secteur\\\\|Répartition' /tmp/pea_profile.html | sort | uniq -c | head\")",
+      "Bash(wsl.exe -e bash -c \"grep -n -i -o '.\\\\{200\\\\}Pays.\\\\{300\\\\}' /tmp/pea_profile.html | head -5; echo '=== chart ids ==='; grep -o -i 'id=\\\\\"[a-zA-Z0-9_-]*[Cc]hart[a-zA-Z0-9_-]*\\\\\"' /tmp/pea_profile.html | sort -u | head -20\")",
+      "Bash(wsl.exe -e bash -c \"grep -o 'data-testid=\\\\\"[a-zA-Z0-9_.-]*holdings[a-zA-Z0-9_.-]*\\\\\"' /tmp/pea_profile.html | sort -u; echo '=== basics ==='; grep -o 'data-testid=\\\\\"[a-zA-Z0-9_.-]*\\\\\\(replication\\\\|index\\\\|ter\\\\|fund-size\\\\|name\\\\\\)[a-zA-Z0-9_.-]*\\\\\"' /tmp/pea_profile.html | sort -u | head -40\")",
+      "Bash(wsl.exe -e bash -c 'for isin in LU1681043599 FR0011550185 FR0007052782 FR0013412020 FR0011871128; do code=$\\(curl -sS -o /tmp/p_$isin.html -w \"%{http_code}\" -H \"User-Agent: Mozilla/5.0\" \"https://www.justetf.com/fr/etf-profile.html?isin=$isin\"\\); c=$\\(grep -o \"etf-holdings_countries_row\" /tmp/p_$isin.html | wc -l\\); s=$\\(grep -o \"etf-holdings_sectors_row\" /tmp/p_$isin.html | wc -l\\); echo \"$isin http=$code countries=$c sectors=$s\"; done')",
+      "Bash(wsl.exe -e bash -c \"grep -o -i '.\\\\{100\\\\}related-etfs.\\\\{1200\\\\}' /tmp/p_LU1681043599.html | head -2\")",
+      "Bash(wsl.exe -e bash -c \"echo countries=\\\\$\\(grep -o 'etf-holdings_countries_row' /tmp/pea_profile.html | wc -l\\) sectors=\\\\$\\(grep -o 'etf-holdings_sectors_row' /tmp/pea_profile.html | wc -l\\) top=\\\\$\\(grep -o 'etf-holdings_top-holdings_row' /tmp/pea_profile.html | wc -l\\); grep -o -i 'etf-holdings_countries_table.\\\\{900\\\\}' /tmp/pea_profile.html | head -1; echo '=== basics row ==='; grep -o -i 'etf-basics_row_index-name.\\\\{400\\\\}' /tmp/pea_profile.html | head -1\")",
+      "Bash(wsl.exe -e bash -c \"grep -o -i '.\\\\{80\\\\}etf-holdings_countries_load-more_link.\\\\{400\\\\}' /tmp/pea_profile.html | head -2\")",
+      "Bash(wsl.exe -e bash -c \"grep -o -i '.\\\\{0,120\\\\}\\\\\"id6\\\\\".\\\\{0,400\\\\}' /tmp/pea_profile.html | head -4\")",
+      "Bash(wsl.exe -e bash -c \"curl -sS -o /tmp/more.xml -w '%{http_code} %{size_download}\\\\n' -H 'User-Agent: Mozilla/5.0' -H 'Wicket-Ajax: true' -H 'Wicket-Ajax-BaseURL: fr/etf-profile.html?isin=IE00B4L5Y983' -H 'X-Requested-With: XMLHttpRequest' 'https://www.justetf.com/fr/etf-profile.html?0-1.0-holdingsSection-countries-loadMoreCountries&isin=IE00B4L5Y983&_wicket=1'; head -c 600 /tmp/more.xml; echo; echo rows=\\\\$\\(grep -o 'etf-holdings_countries_row' /tmp/more.xml | wc -l\\)\")",
+      "Bash(wsl.exe -e bash -c \"cd /tmp && rm -f cj.txt && curl -sS -c cj.txt -o /dev/null -H 'User-Agent: Mozilla/5.0' 'https://www.justetf.com/fr/etf-profile.html?isin=IE00B4L5Y983' && curl -sS -b cj.txt -c cj.txt -L -o /tmp/more.xml -w '%{http_code} %{size_download} %{url_effective}\\\\n' -H 'User-Agent: Mozilla/5.0' -H 'Wicket-Ajax: true' -H 'Wicket-Ajax-BaseURL: fr/etf-profile.html?isin=IE00B4L5Y983' -H 'X-Requested-With: XMLHttpRequest' 'https://www.justetf.com/fr/etf-profile.html?0-1.0-holdingsSection-countries-loadMoreCountries&isin=IE00B4L5Y983&_wicket=1'; echo rows=\\\\$\\(grep -o 'etf-holdings_countries_row' /tmp/more.xml | wc -l\\); head -c 400 /tmp/more.xml\")",
+      "Bash(wsl.exe -e bash -c \"grep -o 'related-etf-row-IE00B4L5Y983.\\\\{1500\\\\}' /tmp/p_LU1681043599.html | head -1\")",
+      "Bash(cd \"//wsl.localhost/Ubuntu-24.04/home/robin/Documents/Projects/PEA\" && sed -n '1,60p' src/index.css && echo '=== biome ===' && cat biome.json && echo '=== vite ===' && cat vite.config.ts && cat tsconfig.app.json)"
+    ]
+  }
+}

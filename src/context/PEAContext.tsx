@@ -1,6 +1,14 @@
 import type React from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import type { Deposit, ETF, ETFPerformance, PEASummary, Transaction } from '../types/pea';
+import type {
+  Deposit,
+  ETF,
+  ETFPerformance,
+  PEASummary,
+  PortfolioExposure,
+  Transaction,
+} from '../types/pea';
+import { buildPortfolioExposure } from '../utils/exposure';
 
 const INITIAL_ETFS: ETF[] = [
   {
@@ -142,6 +150,8 @@ interface PEAContextType {
   transactions: Transaction[];
   etfPerformances: ETFPerformance[];
   summary: PEASummary;
+  countryExposure: PortfolioExposure;
+  sectorExposure: PortfolioExposure;
   addDeposit: (deposit: Omit<Deposit, 'id'>) => void;
   deleteDeposit: (id: string) => void;
   addETF: (etf: Omit<ETF, 'id'>) => void;
@@ -232,6 +242,16 @@ export const PEAProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         totalPortfolioValuation > 0 ? (item.currentValuation / totalPortfolioValuation) * 100 : 0,
     }));
   }, [etfs, transactions]);
+
+  const countryExposure = useMemo<PortfolioExposure>(
+    () => buildPortfolioExposure(etfPerformances, 'countries'),
+    [etfPerformances],
+  );
+
+  const sectorExposure = useMemo<PortfolioExposure>(
+    () => buildPortfolioExposure(etfPerformances, 'sectors'),
+    [etfPerformances],
+  );
 
   const summary = useMemo<PEASummary>(() => {
     const totalDeposits = deposits.reduce((sum, d) => sum + d.amount, 0);
@@ -366,6 +386,8 @@ export const PEAProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         transactions,
         etfPerformances,
         summary,
+        countryExposure,
+        sectorExposure,
         addDeposit,
         deleteDeposit,
         addETF,

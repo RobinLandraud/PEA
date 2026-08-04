@@ -1,0 +1,12 @@
+{
+  "_comment": [
+    "ETF dont l'indice n'existe qu'en version swap : justETF ne propose aucun",
+    "équivalent physique sur le même indice, on désigne donc un fonds comparable",
+    "à la main. L'exposition affichée dans l'app sera marquée comme estimée.",
+    "Format : \"ISIN du fonds détenu\": { \"isin\": \"ISIN du proxy\", \"note\": \"...\" }"
+  ],
+  "FR0013412020": {
+    "isin": "IE00BKM4GZ66",
+    "note": "Amundi PEA Emergent (indice MSCI EM ex-Egypt ESG Broad CTB Select) -> iShares Core MSCI EM IMI, physique, univers émergent large"
+  }
+}
